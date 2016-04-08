@@ -1,4 +1,3 @@
-
 var table = module.exports = require('azure-mobile-apps').table();
 
 table.insert(
@@ -13,9 +12,3 @@ table.read(
 		return context.execute();
 	}
 )
-
-// table.read(function (context) {
-//     return context.execute();
-// });
-
-// table.read.use(customMiddleware, table.operation);

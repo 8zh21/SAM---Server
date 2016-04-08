@@ -1,5 +1,5 @@
 {
-  "softDelete" : true,
+  "softDelete" : false,
   "autoIncrement": false,
   "insert": {
     "access": "authenticated"

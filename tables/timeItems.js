@@ -1,4 +1,3 @@
-
 var table = module.exports = require('azure-mobile-apps').table();
 
 table.read(
@@ -15,9 +14,3 @@ table.insert(
 		context.item.userId = context.user.id;
 		return context.execute();
 });
-
-// table.read(function (context) {
-//     return context.execute();
-// });
-
-// table.read.use(customMiddleware, table.operation);
