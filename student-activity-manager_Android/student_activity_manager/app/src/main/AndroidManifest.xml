@@ -5,15 +5,15 @@
     android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -35,11 +35,32 @@
         <activity
             android:name=".FillUserInfo"
             android:label="@string/fill_user_info_title" />
-        <activity android:name=".newSchItemActivity" />
-        <activity android:name=".editSchItemActivity" />
-        <activity android:name=".newTimeItemActivity" />
-        <activity android:name=".newSchTaskActivity" />
-        <activity android:name=".ScheduleTasksActivity"></activity>
+        <activity
+            android:name=".newSchItemActivity"
+            android:label="@string/newSchItemActivity_title" />
+        <activity
+            android:name=".editSchItemActivity"
+            android:label="@string/editSchItemActivity_title" />
+        <activity
+            android:name=".newTimeItemActivity"
+            android:label="@string/newTimeItemActivity_title" />
+        <activity
+            android:name=".newSchTaskActivity"
+            android:label="@string/newSchTaskActivity_title" />
+        <activity
+            android:name=".ScheduleTasksActivity"
+            android:label="@string/ScheduleTasksActivity_title" />
+        <activity
+            android:name=".TasksActivity"
+            android:label="@string/TasksActivity_title" />
+        <activity android:name=".newTaskActivity" />
+
+        <receiver
+            android:name=".NotificationCreator"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".newNotificationActivity"></activity>
     </application>
 
 </manifest>

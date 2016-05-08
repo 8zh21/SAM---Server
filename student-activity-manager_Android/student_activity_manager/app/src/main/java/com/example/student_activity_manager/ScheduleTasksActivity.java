@@ -36,8 +36,9 @@ public class ScheduleTasksActivity extends Activity {
 
         if (mode == -1)
         {
+            List<ScheduleTaskItem> taskItemsForAdapter = new ArrayList<ScheduleTaskItem>(ScheduleActivity.scheduleTaskItems);
             taskAdapter = new SchTaskItemAdapter2(this, R.layout.schedule_task_item_row_2,
-                                                  ScheduleActivity.scheduleTaskItems);
+                                                  taskItemsForAdapter);
             findViewById(R.id.createSchTaskButton).setVisibility(View.GONE);
             cb.setChecked(true);
         }
@@ -57,7 +58,7 @@ public class ScheduleTasksActivity extends Activity {
 
                 String[] menuItems = {"Выполнено", "Удалить"};
                 final ScheduleTaskItem scheduleTaskItem = taskAdapter.getItem(position);
-                Dialog.createAndShowSchItemMenuDialog(mThis,
+                Dialog.createAndShowMenuDialog(mThis,
                         "Задание",
                         menuItems,
                         new DialogInterface.OnClickListener() {
@@ -113,7 +114,7 @@ public class ScheduleTasksActivity extends Activity {
                     });
                 } catch (Exception e)
                 {
-                    Dialog.createAndShowDialogFromTask(mThis, e.getMessage(), "Error");
+                    Dialog.createAndShowDialogFromTask(mThis, e.getMessage(), "Ошибка");
                 }
                 return null;
             }
@@ -154,7 +155,7 @@ public class ScheduleTasksActivity extends Activity {
                     });
                 } catch (Exception e)
                 {
-                    Dialog.createAndShowDialogFromTask(mThis, e.getMessage(), "Error");
+                    Dialog.createAndShowDialogFromTask(mThis, e.getMessage(), "Ошибка");
                 }
                 return null;
             }
